@@ -1,62 +1,79 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Mister Quiz - Quiz Game Website
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Project Overview
+Mister Quiz is a web-based quiz game inspired by the popular game show "Who Wants to Be a Millionaire?". The project is built using **PHP** with the **Laravel** framework, one of the most popular and powerful PHP web frameworks. This project challenges developers to complete the remaining features of the quiz game by following the instructions and requirements outlined below.
 
-## About Laravel
+## Features
+### User Authentication
+- User Registration: Username, Email, Password, and Password Confirmation.
+- User Login: Email and Password.
+- Error messages for invalid login credentials.
+- Navigation between Login and Registration pages.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### User Profile
+- Username and Email display.
+- XP amount based on correct answers.
+- Rank system based on XP:
+  - Quiz Apprentice: < 1500 XP
+  - Average Quizer: 1500 - 5000 XP
+  - Epic Quizer: 5000 - 10000 XP
+  - Quiz Master: >= 10000 XP
+- Score statistics for each question category:
+  - Percentage of correct answers
+  - Number of correct answers
+  - Total questions answered
+- Profile visibility restricted to the owner.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Quiz System
+- Start Quiz Button (only accessible to logged-in users).
+- Questions displayed with multiple-choice answers.
+- Categories available:
+  - Art
+  - History
+  - Geography
+  - Science
+  - Sports
+- XP awarded for each correct answer.
+- Results Page showing:
+  - Number of correct answers vs total questions
+  - Breakdown of correct answers by category
+- Persistent quiz session (same questions on page refresh or restart).
+- Submission only allowed when all questions are answered.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Leaderboard
+- Top 10 players ranked by XP.
+- Displays:
+  - Username
+  - XP amount
+  - Total correct answers
 
-## Learning Laravel
+## Technologies Used
+- PHP
+- Laravel
+- MySQL
+- Blade Templating Engine
+- XAMPP
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Folder Structure
+- `app/Http/Controllers/` - Backend logic controllers
+- `app/Models/` - Data models
+- `database/migrations/` - Database migrations
+- `public/` - CSS, JS, and images
+- `resources/views/` - Blade templates
+- `routes/web.php` - Website routes
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Commands Cheatsheet
+| Command                  | Description                     |
+|--------------------------|---------------------------------|
+| `php artisan make:controller` | Create a new controller        |
+| `php artisan make:model`      | Create a new model            |
+| `php artisan migrate`         | Apply migrations              |
+| `php artisan db:seed`         | Seed the database             |
+| `php artisan serve`           | Start the development server   |
 
 ## License
+This project is for educational purposes only.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Contribution
+Feel free to fork this repository and submit pull requests to enhance the project.
+
